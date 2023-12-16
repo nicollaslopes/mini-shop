@@ -1,0 +1,14 @@
+{
+    "name": "nikizera/mini-shop",
+    "autoload": {
+        "psr-4": {
+            "Nikizera\\MiniShop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nicollas"
+        }
+    ],
+    "require": {}
+}
