@@ -2,7 +2,7 @@
     "name": "nikizera/mini-shop",
     "autoload": {
         "psr-4": {
-            "Nikizera\\MiniShop\\": "src/"
+            "app\\": "src/"
         }
     },
     "authors": [
@@ -10,5 +10,8 @@
             "name": "nicollas"
         }
     ],
-    "require": {}
+    "require": {
+        "stripe/stripe-php": "^13.6",
+        "vlucas/phpdotenv": "^5.6"
+    }
 }

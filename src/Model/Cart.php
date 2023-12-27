@@ -1,5 +1,7 @@
 <?php
 
+namespace app\Model;
+
 class Cart
 {
 
