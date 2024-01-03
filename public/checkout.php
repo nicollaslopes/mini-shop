@@ -1,6 +1,6 @@
 <?php
 
-use app\Model\Cart;
+use app\model\Cart;
 use Stripe\StripeClient;
 
 require_once('../vendor/autoload.php');

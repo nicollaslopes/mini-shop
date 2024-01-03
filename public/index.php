@@ -1,9 +1,15 @@
 <?php
 
-use app\Model\Cart;
-use app\Model\Product;
+use app\model\Cart;
+use app\model\Product;
 
 require_once('../vendor/autoload.php');
+
+$router = new Router();
+
+$router->add('/', 'GET', 'HomeController:index');
+$router->add('/cart', 'GET', 'CartController:index');
+$router->init();
 
 session_start();
 
@@ -13,8 +19,6 @@ $products = [
   3 => ['id' => 3, 'name' => 'teclado', 'price' => 10.00, 'quantity' => 1],
   4 => ['id' => 4, 'name' => 'monitor', 'price' => 5000.00, 'quantity' => 1],
 ];
-
-
 
 if (isset($_GET['id'])) {
   $id = strip_tags($_GET['id']);
@@ -32,7 +36,7 @@ if (isset($_GET['id'])) {
 var_dump($_SESSION['cart'] ?? []);
 
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -54,4 +58,4 @@ var_dump($_SESSION['cart'] ?? []);
   </ul>
 </body>
 
-</html>
+</html> -->

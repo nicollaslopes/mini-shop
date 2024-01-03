@@ -2,7 +2,8 @@
     "name": "nikizera/mini-shop",
     "autoload": {
         "psr-4": {
-            "app\\": "src/"
+            "app\\": "src/",
+            "route\\": "routes/"
         }
     },
     "authors": [

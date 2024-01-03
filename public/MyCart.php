@@ -1,6 +1,6 @@
 <?php
 
-use app\Model\Cart;
+use app\model\Cart;
 
 require_once('../vendor/autoload.php');
 
