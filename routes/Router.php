@@ -1,6 +1,9 @@
 <?php
 
-namespace route\routes;
+namespace route;
+
+use route\Route;
+use app\controllers\Controller;
 
 class Router {
 
@@ -13,6 +16,10 @@ class Router {
 
     public function init()
     {
+        foreach ($this->routes as $route) {
+            if ($route->match()) return (new Controller)->call($route);
+        }
 
+        return (new Controller)->call(new Route('/404', 'GET', 'NotFoundController:index'));
     }
 }

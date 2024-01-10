@@ -1,14 +1,13 @@
 <?php
 
-namespace route\routes;
+namespace route;
 
 class Route
 {
-
     public function __construct(
         private string $uri, 
         private string $request, 
-        private string $controller
+        public string $controller
     ) {}
 
     private function currentUri()
@@ -23,7 +22,9 @@ class Route
 
     public function match()
     {
-        
+        if ($this->uri === $this->currentUri() && strtolower($this->request) === $this->currentRequest()) {
+            return $this;
+        }   
     }
 
 }
