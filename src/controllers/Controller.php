@@ -10,7 +10,7 @@ class Controller
     {
         $controller = $route->controller;
     
-        if (!str_contains($controller, '')) {
+        if (!str_contains($controller, ':')) {
             throw new \Exception("Semi colon need to controller {$controller} in route");
         }
 
