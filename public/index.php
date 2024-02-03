@@ -8,6 +8,8 @@ try {
   $router = new Router();
   $router->add('/', 'GET', 'HomeController:index');
   $router->add('/cart', 'GET', 'CartController:index');
+  $router->add('/cart/add', 'GET', 'LoginController:add');
+  $router->add('/login', 'GET', 'LoginController:index');
   $router->init();
 } catch (Exception $e) {
   var_dump($e->getMessage());
