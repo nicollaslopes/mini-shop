@@ -1,21 +1,32 @@
-version: '3.3'
-volumes:
-  data:
+version: '3'
+
 services:
   db:
-    image: mysql:5.6
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
     ports:
       - "3306:3306"
     volumes:
-      - data:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=mini-loja
-  app:
-    image: phpmyadmin/phpmyadmin:latest
+      - type: volume
+        source: mini-shop_db_data
+        target: /var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
     links:
       - db
-    ports:
-      - 80:80
     environment:
-      - PMA_ARBITRARY=1
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "80:80"
+
+volumes:
+  mini-shop_db_data:
