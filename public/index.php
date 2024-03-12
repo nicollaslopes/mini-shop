@@ -4,6 +4,9 @@ use route\Router;
 
 require_once('../vendor/autoload.php');
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR);
+$dotenv->load();
+
 try {
   $router = new Router();
   $router->add('/', 'GET', 'HomeController:index');
