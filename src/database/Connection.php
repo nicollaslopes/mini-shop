@@ -13,7 +13,7 @@ class Connection
     {
         if (!self::$connection) {
             try {
-                self::$connection = new PDO("mysql:host=172.18.0.2;dbname=app_development", "root", "password");
+                self::$connection = new PDO("mysql:host={$_ENV['DB_HOST']};dbname={$_ENV['DB_NAME']}", $_ENV['DB_USER'], $_ENV['DB_PASS']);
             } catch (PDOException $e) {
                 echo $e->getMessage();
             }
