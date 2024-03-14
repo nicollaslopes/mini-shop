@@ -2,12 +2,15 @@
 
 namespace app\model;
 
-class Product
+class Product extends Model
 {
-  private int $id;
-  private string $name;
-  private int $price;
-  private int $quantity;
+  public int $id;
+  public string $name;
+  public int $price;
+  public string $slug;
+  public int $quantity;
+  public string $image;
+  public static string $table = 'products';
 
   public function setId(int $id)
   {
