@@ -27,6 +27,11 @@ class Product extends Model
     $this->price = $price;
   }
 
+  public function setSlug(string $slug)
+  {
+    $this->slug = $slug;
+  }
+
   public function setQuantity(int $quantity)
   {
     $this->quantity = $quantity;
@@ -45,6 +50,11 @@ class Product extends Model
   public function getPrice()
   {
     return $this->price;
+  }
+
+  public function getSlug()
+  {
+    return $this->slug;
   }
 
   public function getQuantity()
