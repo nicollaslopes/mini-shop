@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\model\Cart;
 use app\model\Product;
+use app\utils\Redirect;
 use app\views\View;
 
 class CartController
@@ -29,6 +30,8 @@ class CartController
 
             $cart = new Cart;
             $cart->add($product);
+
+            Redirect::back();
         }
     }
 }

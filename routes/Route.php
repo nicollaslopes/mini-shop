@@ -5,7 +5,7 @@ namespace route;
 class Route
 {
     public function __construct(
-        private string $uri, 
+        public string $uri, 
         private string $request, 
         public string $controller
     ) {}
