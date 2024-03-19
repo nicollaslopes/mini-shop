@@ -14,6 +14,7 @@ try {
   $router->add('/cart', 'GET', 'CartController:index');
   $router->add('/cart/add', 'GET', 'CartController:add');
   $router->add('/login', 'GET', 'LoginController:index');
+  $router->add('/login', 'POST', 'LoginController:store');
   $router->init();
 } catch (Exception $e) {
   var_dump($e->getMessage());

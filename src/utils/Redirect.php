@@ -30,10 +30,12 @@ class Redirect
 
     private static function registerRedirect(Route $route)
     {
-        $_SESSION['redirect'] = [
-            'current' => $route->uri,
-            'previous' => $_SESSION['redirect']['current']
-        ];
+        if ($route->uri !== $_SESSION['redirect']['current']) {
+            $_SESSION['redirect'] = [
+                'current' => $route->uri,
+                'previous' => $_SESSION['redirect']['current']
+            ];
+        }
     }
 
     public static function register(Route $route)
@@ -44,7 +46,6 @@ class Redirect
             self::registerFirstRedirect($route);
         } else {
             self::registerRedirect($route);
-                
         }
     }
 }
