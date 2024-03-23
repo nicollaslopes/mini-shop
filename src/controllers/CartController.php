@@ -24,6 +24,7 @@ class CartController
             $product = new Product;
             $product->setId($productInfo->id);
             $product->setSlug($productInfo->slug);
+            $product->setImage($productInfo->image);
             $product->setName($productInfo->name);
             $product->setPrice($productInfo->price);
             $product->setQuantity(1);
@@ -33,5 +34,26 @@ class CartController
 
             Redirect::back();
         }
+    }
+
+    public function destroy()
+    {
+        if (isset($_GET['slug'])) {
+            $id = strip_tags($_GET['slug']);
+            $cart = new Cart();
+            $cart->remove($id);
+            
+            return Redirect::back();
+        }
+    }
+
+    public function update()
+    {
+        $slug = strip_tags($_POST['slug']);
+        $quantity = strip_tags($_POST['quantity']);
+        $cart = new Cart();
+        $cart->update($slug, $quantity);
+
+        return Redirect::to('/cart');
     }
 }

@@ -25,7 +25,7 @@ class Redirect
               'current' => $route->uri,
               'previous' => ''
             ];
-          }
+        }
     }
 
     private static function registerRedirect(Route $route)
