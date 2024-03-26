@@ -5,6 +5,7 @@ namespace app\views;
 use League\Plates\Engine;
 use app\model\Cart;
 use app\model\CartInfo;
+use app\utils\Auth;
 
 class View
 {
@@ -28,6 +29,7 @@ class View
         }
 
         self::addInstances('cart', CartInfo::class);
+        self::addInstances('auth', Auth::class);
 
         $templates = new Engine($filePath);
         $templates->addData(['instances' => self::$instances]);

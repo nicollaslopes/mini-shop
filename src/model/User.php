@@ -6,8 +6,8 @@ class User extends Model
 {
     public static string $table = 'users';
     public readonly int $id;
-    public readonly string $firstName;
-    public readonly string $lastName;
+    public readonly string $first_name;
+    public readonly string $last_name;
     public readonly string $email;
     public readonly string $password;
     public readonly string $created_at;

@@ -8,16 +8,20 @@
       <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
       <li class="nav-item">
+        <?php if ($instances['auth']::auth()) : ?>
         <a class="nav-link">Bem vindo,
+          <?= $instances['auth']::auth()->fullName; ?>
         </a>
       <li class="nav-item">
         <a href="/logout" class="nav-link">Logout</a>
         </a>
       </li>
+      <?php else : ?>
       <a class="nav-link" href="/login">Login</a>
+      <?php endif ?>
       </li>
     </ul>
-    <form class="d-flex">
+    <form action="/cart" class="d-flex">
       <button class="btn btn-outline-dark" type="submit">
         <i class="bi-cart-fill me-1"></i>
         Cart
