@@ -1,15 +1,8 @@
 <?php
 
-use route\Router;
-
-require_once('../vendor/autoload.php');
-session_start();
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR);
-$dotenv->load();
+require_once 'bootstrap.php';
 
 try {
-  $router = new Router();
   $router->add('/', 'GET', 'HomeController:index');
   $router->add('/cart', 'GET', 'CartController:index');
   $router->add('/cart/add', 'GET', 'CartController:add');
