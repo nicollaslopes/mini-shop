@@ -4,7 +4,7 @@
     <form method="post" action="/login">
       <!-- Email input -->
       <div class="form-outline mb-4">
-        <input type="email" name="email" class="form-control" value="nico@gmail.com" />
+        <input type="email" name="email" class="form-control" value="test@gmail.com" />
         <label class="form-label" for="form2Example1">Email address</label>
       </div>
 
