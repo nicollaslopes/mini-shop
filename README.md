@@ -10,7 +10,7 @@ Esse projeto é uma mini loja que possui as funcionalidades de login, adicionar 
 
 - Para baixar as dependências do projeto, execute o comando `composer install`
 - Execute o comando a seguir para subir os containers `docker compose up -d`
-- Crie um arquivo `.env` e copie do arquivo `.env.example`, alterando os dados de conexão
+- Crie um arquivo `.env` e copie as informações do arquivo `.env.example`, alterando os dados de conexão (o STRIPE_KEY é opcional, se desejar fazer o checkout)
 - Para descobrir o IP do MySQL execute `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mini-shop-db-1`
 - Para descobrir o IP do phpMyAdmin execute `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mini-shop-phpmyadmin-1`
 - Assim que subir os containers, será criado o banco de dados `mini-shop`. Agora acesse o container do phpmyadmin e utilize o arquivo `scripts.sql` na raíz do projeto para criar as tabelas. 
