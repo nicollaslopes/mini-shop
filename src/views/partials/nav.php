@@ -13,8 +13,10 @@
           <?= $instances['auth']::auth()->fullName; ?>
         </a>
       <li class="nav-item">
+        <a href="/admin" class="nav-link">Dashboard</a>
+      </li>
+      <li class="nav-item">
         <a href="/logout" class="nav-link">Logout</a>
-        </a>
       </li>
       <?php else : ?>
       <a class="nav-link" href="/login">Login</a>

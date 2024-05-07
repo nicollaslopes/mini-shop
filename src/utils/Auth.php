@@ -20,6 +20,11 @@ class Auth
         }
     }
 
+    public static function isAuth()
+    {
+        return isset($_SESSION['auth']);
+    }
+
     public static function auth()
     {
         return $_SESSION['auth'] ?? null;
